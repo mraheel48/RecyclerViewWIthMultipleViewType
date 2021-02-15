@@ -2,7 +2,7 @@ package com.developer.solutions.recyclerviewwithmultipleviewtype.adapter;
 
 import android.app.Activity;
 import android.content.Context;
-import android.support.v4.view.PagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,7 +34,7 @@ public class SliderPagerAdapter extends PagerAdapter {
 
         View view = layoutInflater.inflate(R.layout.layout_slider, container, false);
         ImageView im_slider = (ImageView) view.findViewById(R.id.im_slider);
-        Picasso.with(activity.getApplicationContext())
+        Picasso.get()
                 .load(image_arraylist.get(position))
                 .placeholder(R.mipmap.ic_launcher) // optional
                 .error(R.mipmap.ic_launcher)         // optional

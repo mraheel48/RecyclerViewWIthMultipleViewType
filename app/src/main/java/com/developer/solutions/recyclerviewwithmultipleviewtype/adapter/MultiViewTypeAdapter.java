@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Handler;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,11 +24,9 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by Mukesh on 3/8/17.
- * himky02@gmail.com
- */
+
 public class MultiViewTypeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
     private ArrayList<Data> dataSet;
     Context mContext;
     int total_types;
@@ -36,6 +34,7 @@ public class MultiViewTypeAdapter extends RecyclerView.Adapter<RecyclerView.View
     int page = 0;
 
     public static class TextTypeViewHolder extends RecyclerView.ViewHolder {
+
         @BindView(R.id.ll_dots)
         LinearLayout ll_dots;
         @BindView(R.id.vp_slider)
@@ -48,6 +47,7 @@ public class MultiViewTypeAdapter extends RecyclerView.Adapter<RecyclerView.View
     }
 
     public static class ImageTypeViewHolder extends RecyclerView.ViewHolder {
+
         @BindView(R.id.type)
         TextView tvtype;
         @BindView(R.id.img)
@@ -117,8 +117,11 @@ public class MultiViewTypeAdapter extends RecyclerView.Adapter<RecyclerView.View
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int listPosition) {
 
         Data object = dataSet.get(listPosition);
+
         if (object != null) {
+
             switch (object.type) {
+
                 case Data.VIEW_PAGER:
                     //((TextTypeViewHolder) holder).type.setText(object.text);
                     slider_image_list = new ArrayList<>();
@@ -126,10 +129,11 @@ public class MultiViewTypeAdapter extends RecyclerView.Adapter<RecyclerView.View
                     //Add few items to slider_image_list ,this should contain url of images which should be displayed in slider
                     // here i am adding few sample image links, you can add your own
 
-                    slider_image_list.add("http://cdn.collider.com/wp-content/uploads/avengers-movie-banner-scarlett-johansson-jeremy-renner.jpg");
-                    slider_image_list.add("http://www.officialterridwyer.com/wp-content/uploads/2015/04/Disneys-Cinderella-2015-Movie-Banner.jpg");
-                    slider_image_list.add("http://igmedia.blob.core.windows.net/igmedia/hindi/gallery/movies/raabta/main1.jpg");
-                    slider_image_list.add("http://fantoosy.com/wp-content/uploads/2015/11/tamasha.jpg");
+                    slider_image_list.add("https://www.gstatic.com/webp/gallery/1.webp");
+                    slider_image_list.add("https://www.gstatic.com/webp/gallery/2.webp");
+                    slider_image_list.add("https://www.gstatic.com/webp/gallery/3.webp");
+                    slider_image_list.add("https://www.gstatic.com/webp/gallery/4.webp");
+
                     final SliderPagerAdapter sliderPagerAdapter = new SliderPagerAdapter((Activity) mContext, slider_image_list);
                     ((TextTypeViewHolder) holder).mvViewPager.setAdapter(sliderPagerAdapter);
 
@@ -150,8 +154,10 @@ public class MultiViewTypeAdapter extends RecyclerView.Adapter<RecyclerView.View
 
                         }
                     });
+
                     addBottomDots(0, ((TextTypeViewHolder) holder).ll_dots);
-                    final Handler h = new Handler();
+
+                   /* final Handler h = new Handler();
                     h.postDelayed(new Runnable() {
                         @Override
                         public void run() {
@@ -163,7 +169,7 @@ public class MultiViewTypeAdapter extends RecyclerView.Adapter<RecyclerView.View
                             ((TextTypeViewHolder) holder).mvViewPager.setCurrentItem(page);
                             h.postDelayed(this, 2000);
                         }
-                    }, 1000);
+                    }, 1000);*/
 
                     break;
                 case Data.IMAGE_TYPE:

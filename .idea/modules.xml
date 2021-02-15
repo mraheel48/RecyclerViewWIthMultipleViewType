@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidStudioProjects-RecyclerViewWIthMultipleViewType.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidStudioProjects-RecyclerViewWIthMultipleViewType.iml" group="RecyclerViewWIthMultipleViewType" />
       <module fileurl="file://$PROJECT_DIR$/RecyclerViewWIthMultipleViewType.iml" filepath="$PROJECT_DIR$/RecyclerViewWIthMultipleViewType.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/RecyclerViewWIthMultipleViewType-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/RecyclerViewWIthMultipleViewType-app.iml" group="RecyclerViewWIthMultipleViewType/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
